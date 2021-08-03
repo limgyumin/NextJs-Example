@@ -1,7 +1,12 @@
 import { AnyAction, CombinedState, combineReducers } from "redux";
 import { HYDRATE } from "next-redux-wrapper";
 
-type State = {};
+import common from "./common";
+import { CommonState } from "./common";
+
+type State = {
+  common: CommonState;
+};
 
 const rootReducer = (
   state: State | undefined,
@@ -11,7 +16,9 @@ const rootReducer = (
     case HYDRATE:
       return { ...state, ...action.payload };
     default:
-      const reducer = combineReducers({});
+      const reducer = combineReducers({
+        common,
+      });
       return reducer(state, action);
   }
 };
