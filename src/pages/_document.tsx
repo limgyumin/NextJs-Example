@@ -1,11 +1,5 @@
 import React from "react";
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -22,7 +16,7 @@ export default class MyDocument extends Document {
   }
 }
 
-export async function getServerSideProps(ctx: DocumentContext) {
+MyDocument.getInitialProps = async (ctx) => {
   const sheet = new ServerStyleSheet();
   const originalRenderPage = ctx.renderPage;
 
@@ -45,4 +39,4 @@ export async function getServerSideProps(ctx: DocumentContext) {
   } finally {
     sheet.seal();
   }
-}
+};
