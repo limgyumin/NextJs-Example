@@ -28,5 +28,5 @@ export type PostsResponse = {
 
 export type PostResponse = {
   message: string;
-  data: IPost[];
+  data: IPost;
 };
