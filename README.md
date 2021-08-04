@@ -1,34 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 개요
 
-## Getting Started
+NextJs에 대한 기본적인 이해와 실제 사용법, 그리고 Redux와 Styled-Components와 같이 다른 라이브러리와 함께 사용할 때의 설정법을 익히기 위한 예제 프로젝트.
 
-First, run the development server:
+## 무엇을 배웠는가?
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- NextJs의 서버사이드 렌더링 개념 및 사용법에 대해 알게되었음.
+- NextJs를 Redux와 사용할 시에 요청마다 새로운 redux store를 생성하는 문제를 해결하고 getServerSideProps에서 redux store에 접근하기 위해 next-redux-wrapper 라이브러리를 사용해야함을 알게되었음.
+- NextJs를 Styled-Component와 사용할 시에 Client Side와 Server Side의 classname 차이로 인한 이슈를 .babelrc 설정을 통해 해결할 수 있음을 알게되었음.
