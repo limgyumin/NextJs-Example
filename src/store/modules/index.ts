@@ -2,10 +2,14 @@ import { AnyAction, CombinedState, combineReducers } from "redux";
 import { HYDRATE } from "next-redux-wrapper";
 
 import common from "./common";
+import post from "./post";
+
 import { CommonState } from "./common";
+import { PostState } from "./post";
 
 type State = {
   common: CommonState;
+  post: PostState;
 };
 
 const rootReducer = (
@@ -18,6 +22,7 @@ const rootReducer = (
     default:
       const reducer = combineReducers({
         common,
+        post,
       });
       return reducer(state, action);
   }

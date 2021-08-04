@@ -7,6 +7,7 @@ import { createThunkDispatch } from "./createThunkDispatch";
 
 import { PostsParams } from "types/post.type";
 import { FETCH_POSTS_LIMIT } from "constants/post";
+import { fetchPostThunk } from "store/modules/post";
 
 export const fetchPostsPromise = async (
   store: Store<RootState, AnyAction>
@@ -22,5 +23,18 @@ export const fetchPostsPromise = async (
     };
 
     await dispatch(fetchPostsThunk(params));
+  }
+};
+
+export const fetchPostPromise = async (
+  store: Store<RootState, AnyAction>,
+  idx: number
+): Promise<void> => {
+  const { post } = store.getState();
+
+  const dispatch = createThunkDispatch(store.dispatch);
+
+  if (!post.data.idx) {
+    await dispatch(fetchPostThunk(idx));
   }
 };

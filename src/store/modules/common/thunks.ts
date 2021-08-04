@@ -1,9 +1,10 @@
 import { ThunkAction } from "redux-thunk";
+
 import { PostsParams, PostsPayload } from "types/post.type";
+import { CommonAction } from "./types";
 import { fetchPostsRequest } from "utils/apis/post.api";
 import { RootState } from "..";
 import { fetchPostsAsync } from "./actions";
-import { CommonAction } from "./types";
 
 export const fetchPostsThunk = (
   params: PostsParams

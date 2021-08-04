@@ -1,10 +1,7 @@
 export const colors = {
   bgWhite: "#fff",
 
-  bdGray: "#cacaca",
-
-  ftBlack: "#232323",
-  ftGray: "#5e5e5e",
-  ftGray1: "#929292",
-  ftGray2: "#f7f7f7",
+  ftBlack: "#000",
+  ftGray: "#808080",
+  ftGray1: "#a1a1a1",
 };

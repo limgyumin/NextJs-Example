@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import PostItem from "components/PostItem";
 
-import { useFetchPosts } from "hooks/posts/useFetchPosts";
+import { useFetchPosts } from "hooks/post/useFetchPosts";
 
 type Props = unknown;
 

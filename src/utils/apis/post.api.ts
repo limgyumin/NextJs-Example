@@ -1,9 +1,12 @@
 import axios from "axios";
-import { PostsParams, PostsResponse } from "types/post.type";
+import { PostResponse, PostsParams, PostsResponse } from "types/post.type";
 
 import { BASE_URL } from "config/config.json";
 
-export const fetchPostsRequest = async ({ page, limit }: PostsParams) => {
+export const fetchPostsRequest = async ({
+  page,
+  limit,
+}: PostsParams): Promise<PostsResponse> => {
   const url = `${BASE_URL}/post`;
 
   const params = {
@@ -12,6 +15,14 @@ export const fetchPostsRequest = async ({ page, limit }: PostsParams) => {
   };
 
   const { data } = await axios.get<PostsResponse>(url, { params });
+
+  return data;
+};
+
+export const fetchPostRequest = async (idx: number): Promise<PostResponse> => {
+  const url = `${BASE_URL}/post/${idx}`;
+
+  const { data } = await axios.get<PostResponse>(url);
 
   return data;
 };
