@@ -8,15 +8,19 @@ import { useFetchPosts } from "hooks/post/useFetchPosts";
 type Props = unknown;
 
 const Main: React.FC<Props> = () => {
-  const { posts } = useFetchPosts();
+  const { posts, lastEl } = useFetchPosts();
 
   return (
     <Container>
       <Wrapper>
         <List>
-          {posts.map((post) => (
-            <PostItem key={post.idx} post={post} />
-          ))}
+          {posts.map((post, idx) =>
+            posts.length - 1 === idx ? (
+              <PostItem key={post.idx} post={post} lastEl={lastEl} />
+            ) : (
+              <PostItem key={post.idx} post={post} />
+            )
+          )}
         </List>
       </Wrapper>
     </Container>

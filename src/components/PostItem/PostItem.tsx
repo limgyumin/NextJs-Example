@@ -8,16 +8,17 @@ import { getDateFormat } from "utils/libs/dateFormat.lib";
 
 type Props = {
   post: IPost;
+  lastEl?: (node?: Element) => void;
 };
 
-const PostItem: React.FC<Props> = ({ post }) => {
+const PostItem: React.FC<Props> = ({ post, lastEl }) => {
   const { idx, title, description, content, created_at } = post;
 
   const formattedDate = useMemo(() => getDateFormat(created_at), [created_at]);
 
   return (
     <Link href={"/post/[idx]"} as={`/post/${idx}`}>
-      <Container>
+      <Container ref={lastEl}>
         <Title>{title}</Title>
         <Description>{description}</Description>
         <Content>{content}</Content>
