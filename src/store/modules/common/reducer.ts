@@ -3,6 +3,7 @@ import {
   FETCH_POSTS,
   FETCH_POSTS_FAILURE,
   FETCH_POSTS_SUCCESS,
+  INCREASE_PAGE,
 } from "./actions";
 import { CommonAction, CommonState } from "./types";
 
@@ -65,6 +66,13 @@ const commons = createReducer<CommonState, CommonAction>(initialState, {
       page: 1,
       total: 0,
       posts: [],
+    },
+  }),
+  [INCREASE_PAGE]: (state) => ({
+    ...state,
+    data: {
+      ...state.data,
+      page: state.data.page + 1,
     },
   }),
 });
